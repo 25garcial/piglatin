@@ -40,7 +40,7 @@ function convertToPiglatin(english){
 }
 
 function addData(newData){
-output.textContent.push(newData);
+    output.textContent+=newData;
 }
 function main(){    
 var input = new textbox("Lorem Ipsum");
