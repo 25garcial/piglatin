@@ -1,6 +1,5 @@
 var inputs = document.querySelector(".inputs");
 var output = document.querySelector(".output");
-output.textContent="";
 
 function randomNum(maxInt){
     return Math.floor(Math.random()*maxInt);
@@ -28,30 +27,31 @@ function convertToPiglatin(english){
     for (var wordIndex=0; wordIndex<english.length; wordIndex++){
         var word=english[wordIndex];
         var pigWord="";
-        consonant=english[wordIndex].slice(0,2);
-
-        if (consonantGroups.includes(consonant.toLowerCase())){
-            word=word+consonant;
-            pigWord=word.slice(2)+"ay";
+       
+        if (consonantGroups.includes(consonant=english[wordIndex].slice(0,2).toLowerCase())){
+            pigWord=word.slice(2)+consonant+"ay";
         } 
-        else if (consonants.includes(consonant.toLowerCase())){
-            word=word+consonant;
-            pigWord=word.slice(1)+"ay";
+        else if (consonants.includes(consonant=english[wordIndex].slice(0,1).toLowerCase())){
+            
+            pigWord=word.slice(1)+consonant.slice(0,1)+"ay";
         }
         else{
-            pigword=word+"way";
+            pigWord=word+"way";
         }
 
         result.push(pigWord);
     }
     result=result.join(" ");
-   
     return result;
 }
 
 function addData(newData){
-    output.textContent+=newData;
+    output.innerHTML=newData;
 }
+
+
+
+
 
 function main(){    
 var input = new textbox("Lorem Ipsum");
