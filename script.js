@@ -23,15 +23,18 @@ function convertToPiglatin(english){
     var result=[];
     var consonantGroups= ["sh", "ch", "th"];
     var consonants = ["b","c", "d", "f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"];
+    var consonant="";
+
     for (var wordIndex=0; wordIndex<english.length; wordIndex++){
         var word=english[wordIndex];
         var pigWord="";
+        consonant=english[wordIndex].slice(0,2);
 
-        if (consonantGroups.includes(consonant=english.slice(0,2))){
+        if (consonantGroups.includes(consonant.toLowerCase())){
             word=word+consonant;
             pigWord=word.slice(2)+"ay";
         } 
-        else if (consonants.includes(consonant=english.slice(0,1))){
+        else if (consonants.includes(consonant.toLowerCase())){
             word=word+consonant;
             pigWord=word.slice(1)+"ay";
         }
@@ -40,10 +43,9 @@ function convertToPiglatin(english){
         }
 
         result.push(pigWord);
-        alert(result);
     }
     result=result.join(" ");
-    alert(result);
+   
     return result;
 }
 
