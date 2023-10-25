@@ -12,11 +12,9 @@ class textbox{
     textbox.placeholder=name;
     textbox.id=toString(randomNum(1000));
 
-
     inputs.appendChild(textbox);
     return textbox;
 }
-
 }
 
 function convertToPiglatin(english){
@@ -38,12 +36,8 @@ function convertToPiglatin(english){
         result.push(newWord);
     }
     result=result.join(" ");
-    // alert(english.slice(0,2));
-    //alert(consonantGroups.includes(english.slice(0,2)));
-
    
     return result;
-
 }
 
 function addData(newData){
