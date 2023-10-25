@@ -1,5 +1,6 @@
 var inputs = document.querySelector(".inputs");
 var output = document.querySelector(".output");
+output.textContent="";
 
 function randomNum(maxInt){
     return Math.floor(Math.random()*maxInt);
@@ -45,6 +46,7 @@ function convertToPiglatin(english){
 function addData(newData){
     output.textContent+=newData;
 }
+
 function main(){    
 var input = new textbox("Lorem Ipsum");
 var english="";
