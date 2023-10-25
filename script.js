@@ -24,16 +24,19 @@ function convertToPiglatin(english){
     var consonants = ["b","c", "d", "f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"];
     for (var wordIndex=0; wordIndex<english.length; wordIndex++){
         var word=english[wordIndex];
-        var newWord="";
+        var pigWord="";
         if (consonantGroups.includes(consonant=english.slice(0,2))){
             word=word+consonant;
-            newWord=word.slice(2);
+            pigWord=word.slice(2)+"ay";
         } 
         else if (consonants.includes(consonant=english.slice(0,1))){
             word=word+consonant;
-            newWord=word.slice(1);
+            pigWord=word.slice(1)+"ay";
         }
-        result.push(newWord);
+        else{
+            pigword=word+"way";
+        }
+        result.push(pigWord);
     }
     result=result.join(" ");
     return result;
