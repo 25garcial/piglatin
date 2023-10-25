@@ -46,7 +46,7 @@ function main(){
 var input = new textbox("Lorem Ipsum");
 var english="";
 submitButton = document.createElement("button");
-submitButton.textContent="Convert to piglatin"
+submitButton.textContent="Convert to piglatin";
 submitButton.addEventListener("click", ()=>{
     english=input.value;
     input.value="";
