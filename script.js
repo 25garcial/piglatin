@@ -19,9 +19,9 @@ constructor(name){
 
 function convertToPiglatin(english){
     var consonantGroups= ["sh", "ch", "th"];
-    var consonants=["b","c", "d", "f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"];
-    if (english.toString().slice(1) ){
-
+    var consonants = ["b","c", "d", "f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"];
+    if (consonantGroups.includes(consonant=english.toString().slice(2)) ){
+        console.log()
     }
 
 }
