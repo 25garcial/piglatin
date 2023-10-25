@@ -26,6 +26,7 @@ function convertToPiglatin(english){
     for (var wordIndex=0; wordIndex<english.length; wordIndex++){
         var word=english[wordIndex];
         var pigWord="";
+
         if (consonantGroups.includes(consonant=english.slice(0,2))){
             word=word+consonant;
             pigWord=word.slice(2)+"ay";
@@ -37,9 +38,12 @@ function convertToPiglatin(english){
         else{
             pigword=word+"way";
         }
+
         result.push(pigWord);
+        alert(result);
     }
     result=result.join(" ");
+    alert(result);
     return result;
 }
 
