@@ -36,7 +36,6 @@ function convertToPiglatin(english){
         result.push(newWord);
     }
     result=result.join(" ");
-   
     return result;
 }
 
