@@ -26,7 +26,7 @@ function convertToPiglatin(english){
     var consonants = ["b","c", "d", "f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"];
     alert(english.slice(2));
     alert(consonantGroups.includes(english.slice(2)));
-    
+
     if (consonantGroups.includes(String(consonant)=english.slice(2))){
         alert(consonant);
     }
@@ -36,7 +36,7 @@ function convertToPiglatin(english){
 
 function main(){
 
-var input = new textbox();
+var input = new textbox("Lorem Ipsum");
 var english="";
 submitButton = document.createElement("button");
 submitButton.textContent="Convert to piglatin"
