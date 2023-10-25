@@ -1,9 +1,11 @@
+
+inputs = document.querySelector(".inputs");
+
 function randomNum(maxInt){
     return Math.floor(Math.random()*maxInt);
 }
-class textbox{
-    inputs = window.document.querySelector(".inputs");
-
+ class textbox{
+    
 constructor(name){
     
     var textbox=document.createElement("input");
@@ -20,8 +22,8 @@ constructor(name){
 function convertToPiglatin(english){
     var consonantGroups= ["sh", "ch", "th"];
     var consonants = ["b","c", "d", "f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"];
-    if (consonantGroups.includes(consonant=english.toString().slice(2)) ){
-        console.log()
+    if (consonantGroups.includes(String(consonant)=english.slice(2))){
+        alert(consonant);
     }
 
 }
@@ -29,12 +31,16 @@ function convertToPiglatin(english){
 function main(){
 
 var input = new textbox();
-submitButton = document.createElement("button");
 var english="";
+submitButton = document.createElement("button");
+
 submitButton.addEventListener("click", ()=>{
     english=input.value;
     input.value="";
     convertToPiglatin(english);
 });
+inputs.appendChild(submitButton);
 
 }
+
+main();
