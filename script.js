@@ -10,7 +10,7 @@ class textbox{
     
     var textbox=document.createElement("input");
     textbox.placeholder=name;
-    textbox.id=toString(randomNum(1000));
+    textbox.id=String(randomNum(1000));
 
     inputs.appendChild(textbox);
     return textbox;
@@ -45,7 +45,7 @@ output.textContent.push(newData);
 function main(){    
 var input = new textbox("Lorem Ipsum");
 var english="";
-submitButton = document.createElement("button");
+var submitButton = document.createElement("button");
 submitButton.textContent="Convert to piglatin";
 submitButton.addEventListener("click", ()=>{
     english=input.value;
