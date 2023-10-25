@@ -24,10 +24,10 @@ function convertToPiglatin(english){
     alert(`english: ${english}`);
     var consonantGroups= ["sh", "ch", "th"];
     var consonants = ["b","c", "d", "f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"];
-    alert(english.slice(2));
-    alert(consonantGroups.includes(english.slice(2)));
+    alert(english.slice(0,2));
+    alert(consonantGroups.includes(english.slice(0,2)));
 
-    if (consonantGroups.includes(String(consonant)=english.slice(2))){
+    if (consonantGroups.includes(String(consonant)=english.slice(0,2))){
         alert(consonant);
     }
     return 0;
