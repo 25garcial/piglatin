@@ -52,6 +52,7 @@ submitButton.addEventListener("click", ()=>{
     english=input.value;
     input.value="";
     var piglatin = convertToPiglatin(english);
+    addData(piglatin);
 });
 
 inputs.appendChild(submitButton);
