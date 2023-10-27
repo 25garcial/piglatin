@@ -20,6 +20,7 @@ class textbox{
 function convertToPiglatin(english){
     english=english.split(" ");
     var result="";
+    const punctuations=[".", ",", "?","!"];
     var consonantGroups= ["sh", "ch", "th"];
     var consonants = ["b","c", "d", "f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"];
     var consonant="";
@@ -29,17 +30,42 @@ function convertToPiglatin(english){
         var pigWord="";
        
         if (consonantGroups.includes(consonant=english[wordIndex].slice(0,2).toLowerCase())){
-            pigWord=word.slice(2)+consonant+"ay";
+            if (punctuations.includes(word.slice(this.length-1))){
+                pigWord=word.slice(2,word.length-1)+consonant+"ay"+word.slice(word.length-1);
+                
+            }else{
+                pigWord=word.slice(2)+consonant+"ay";
+            }
+            
+           
         } 
         else if (consonants.includes(consonant=english[wordIndex].slice(0,1).toLowerCase())){
-            
-            pigWord=word.slice(1)+consonant+"ay";
+            if (punctuations.includes(word.slice(this.length-1))){
+                pigWord=word.slice(1,word.length-1)+consonant+"ay"+word.slice(word.length-1);
+                
+            }else{
+                pigWord=word.slice(1)+consonant+"ay";
+            }
+
+          
         }
         else{
-            pigWord=word+"way";
+            if (punctuations.includes(word.slice(this.length-1))){
+                pigWord=word.slice(0,word.length-1)+"way"+word.slice(word.length-1);
+                
+            }else{
+                pigWord=word+"way";
+            }
+            
         }
-
-        result+=" "+pigWord;
+        
+        if (wordIndex==0){
+            pigWord=pigWord.slice(0,1).toUpperCase()+pigWord.slice(1);
+        } else if(punctuations.includes(result.slice(-2,-1)) && result.slice(-2,-1)!=","){
+            
+            pigWord=pigWord.slice(0,1).toUpperCase()+pigWord.slice(1);
+        }
+        result+=pigWord+" ";
     }
     
     return result;
